@@ -3,5 +3,21 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.1.0.min.js', integrity='sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+
   body
+   .row
+     .col-xs-6.col-md-4
+       .alert.alert-danger.alert-dismissible#warning(role='alert' style="display:none;")
+         span.glyphicon.glyphicon-exclamation-sign(aria-hidden='true')
+         button.close(type='button', data-dismiss='alert', aria-label='Close')
+           span(aria-hidden='true') ×
+         span#warningMsg
+
     block content
+
+  script(src='/javascripts/conference-helper.js')
+  script(src='/javascripts/script.js')
+

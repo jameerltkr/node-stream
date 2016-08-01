@@ -1,5 +1,37 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  form(action="/conference" method="GET")
+    .row
+        .col-xs-6.col-md-4
+          .panel.panel-primary
+            // Default panel contents
+            .panel-heading Configure System
+            .panel-body
+              // Table
+              table.table
+                tr
+                  th
+                    | Browser Compatibility 
+                  td
+                    span#browserCompt
+                tr
+                  th
+                    | Audio / Microphone
+                  td
+                    select#selectAudio.form-control
+                      option(value="0") Select
+                tr
+                  th
+                    | Default Camera
+                  td
+                    select#selectCamera.form-control
+                      option(value="0") Select
+                tr
+                  th
+                    | Server Connection
+                  td
+                    | Server#
+          input#btnContinue(type="submit" value="Continue" class="btn btn-success")
+        .col-xs-6.col-md-3
+          video#video

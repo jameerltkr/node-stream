@@ -1,4 +1,4 @@
-﻿// Display warning on page
+﻿// Display messages on page
 function displayMessage(messageText, messageType) {
 
     if (messageType.indexOf("warning") > -1) {
@@ -11,6 +11,7 @@ function displayMessage(messageText, messageType) {
         html += '</div>';
 
         $("#message").html(html);
+
     } else if (messageType.indexOf("success") > -1) {
         var html = '';
         html += '<div class="alert alert-success alert-dismissible" role="alert">';

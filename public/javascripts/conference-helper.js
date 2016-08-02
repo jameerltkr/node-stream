@@ -1,13 +1,7 @@
-﻿// Display warning on page
-function displayWarning(warningText) {
-    $("#warning").css("display", "block");
-    $("#warningMsg").html(warningText);
-}
-
-// Browser compatibility check
+﻿// Browser compatibility check
 // Let's check if the browser supports notifications
 if (!("Notification" in window)) {
-    displayWarning("This browser does not support notifications.");
+    displayMessage("This browser does not support notifications.", "warning");
 }
 
 // Let's check if the browser supports Conferencing
@@ -42,11 +36,11 @@ if (navigator.getUserMedia) {
            });
        },
        function (err) {
-           displayWarning("The following error occurred: " + err.name);
+           displayMessage("The following error occurred: " + err.name, "warning");
        }
     );
 } else {
     $("#browserCompt").addClass("glyphicon glyphicon-exclamation-sign");
-    displayWarning("This browser does not support conferencing.");
+    displayMessage("This browser does not support conferencing.", "warning");
     $("#btnContinue").attr("disabled", true);   // Disable the Continue Button
 }

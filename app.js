@@ -8,7 +8,17 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var mongoose = require('mongoose');
+
 var app = express();
+
+var config = require('./bin/config');     //calling configuration file
+var MongoDBPath = (process.env.NODE_ENV === 'production') ? process.env.MONGOLAB_URI : config.database;
+
+mongoose.connect(MongoDBPath, function (error) {
+    if (error) console.error(error);
+    else console.log('mongo connected');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -10,14 +10,9 @@ html
   body
    .row
      .col-xs-6.col-md-4
-       .alert.alert-danger.alert-dismissible#warning(role='alert' style="display:none;")
-         span.glyphicon.glyphicon-exclamation-sign(aria-hidden='true')
-         button.close(type='button', data-dismiss='alert', aria-label='Close')
-           span(aria-hidden='true') ×
-         span#warningMsg
+       #message
 
     block content
 
-  script(src='/javascripts/conference-helper.js')
   script(src='/javascripts/script.js')
 
